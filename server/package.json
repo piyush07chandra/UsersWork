@@ -6,9 +6,12 @@
   "type": "module",
 
   "scripts": {
+    
+    "start": "babel-node your_script.js",
     "dev":"nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm i"
+    "build": "npm i",
+    "pretest": "@babel/preset-env"
   },
   "author": "piyush",
   "license": "ISC",
