@@ -1,6 +1,11 @@
-const express=require('express')
-const mongoose=require('mongoose')
-const cors=require('cors')
+// const express=require('express')
+// const mongoose=require('mongoose')
+// const cors=require('cors')
+
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors'
+
 
 const app=express();
 app.use(cors());
@@ -27,7 +32,7 @@ async function main() {
 })
 const User = mongoose.model('User', userSchema);
 
-   const users =  User.find({}).exec();
+   const users = await User.find({}).exec();
     
  
   app.get('/',(req,res)=>{
