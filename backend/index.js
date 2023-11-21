@@ -1,10 +1,10 @@
-// const express=require('express')
-// const mongoose=require('mongoose')
-// const cors=require('cors')
+const express=require('express')
+const mongoose=require('mongoose')
+const cors=require('cors')
 
-import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors'
+// import express from 'express';
+// import mongoose from 'mongoose';
+// import cors from 'cors'
 
 
 const app=express();
@@ -32,10 +32,11 @@ async function main() {
 })
 const User = mongoose.model('User', userSchema);
 
-   const users = await User.find({}).exec();
+   
     
  
-  app.get('/',(req,res)=>{
+  app.get('/',async(req,res)=>{
+      const users = await User.find({}).exec();
     res.send(users)
   })
 
